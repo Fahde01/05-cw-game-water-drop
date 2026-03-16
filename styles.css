@@ -134,6 +134,47 @@ body {
     }
 }
 
+.end-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 60px;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: popIn 0.4s ease-out;
+}
+
+.end-message.winning {
+    color: #fff;
+    background: linear-gradient(135deg, #4FCB53 0%, #159A48 100%);
+}
+
+.end-message:not(.winning) {
+    color: #fff;
+    background: linear-gradient(135deg, #FF902A 0%, #F5402C 100%);
+}
+
+.end-message.hidden {
+    display: none;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
 @media (max-width: 850px) {
     .game-wrapper, .score-panel, #game-container {
         width: 95vw;
